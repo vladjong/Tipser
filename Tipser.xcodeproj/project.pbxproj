@@ -11,6 +11,8 @@
 		29F47475284F4D590019CACF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F47474284F4D590019CACF /* ContentView.swift */; };
 		29F47477284F4D5A0019CACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F47476284F4D5A0019CACF /* Assets.xcassets */; };
 		29F4747A284F4D5A0019CACF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F47479284F4D5A0019CACF /* Preview Assets.xcassets */; };
+		29F47482284F4DE80019CACF /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 29F47481284F4DE80019CACF /* RiveRuntime */; };
+		29F47484284F4DFF0019CACF /* RiveAssets in Resources */ = {isa = PBXBuildFile; fileRef = 29F47483284F4DFF0019CACF /* RiveAssets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		29F47474284F4D590019CACF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		29F47476284F4D5A0019CACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29F47479284F4D5A0019CACF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		29F47483284F4DFF0019CACF /* RiveAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RiveAssets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F47482284F4DE80019CACF /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 				29F47472284F4D590019CACF /* TipserApp.swift */,
 				29F47474284F4D590019CACF /* ContentView.swift */,
 				29F47476284F4D5A0019CACF /* Assets.xcassets */,
+				29F47483284F4DFF0019CACF /* RiveAssets */,
 				29F47478284F4D5A0019CACF /* Preview Content */,
 			);
 			path = Tipser;
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = Tipser;
+			packageProductDependencies = (
+				29F47481284F4DE80019CACF /* RiveRuntime */,
+			);
 			productName = Tipser;
 			productReference = 29F4746F284F4D590019CACF /* Tipser.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 29F47466284F4D590019CACF;
+			packageReferences = (
+				29F47480284F4DE80019CACF /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = 29F47470284F4D590019CACF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +138,7 @@
 			files = (
 				29F4747A284F4D5A0019CACF /* Preview Assets.xcassets in Resources */,
 				29F47477284F4D5A0019CACF /* Assets.xcassets in Resources */,
+				29F47484284F4DFF0019CACF /* RiveAssets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +285,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -284,7 +297,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,6 +315,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,7 +327,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -339,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29F47480284F4DE80019CACF /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29F47481284F4DE80019CACF /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29F47480284F4DE80019CACF /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29F47467284F4D590019CACF /* Project object */;
 }
