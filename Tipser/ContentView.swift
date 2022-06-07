@@ -15,11 +15,12 @@ struct ContentView: View {
     @State private var percentTip = 0.0
     @State private var bill = 0
     @State private var characterLimit = 7
+    @FocusState private var amountIsFocused: Bool
 
     var totalPercent: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(percentTip)
-        let orderAmount = Double(checkAmount) ?? 0
+        let orderAmount = Double(checkAmount.replacingOccurrences(of: ",", with: ".")) ?? 0
         let value = orderAmount * tipSelection / 100
         let grandTotal = orderAmount + value
         let amountPerson = grandTotal / peopleCount
@@ -46,7 +47,6 @@ struct ContentView: View {
                         TextField("Amount",text: $checkAmount)
                             .frame(height: 100, alignment: .center)
                             .multilineTextAlignment(.center)
-                            .keyboardType(.numberPad)
                             .font(.system(size:54, weight: .semibold, design: .monospaced))
                             .foregroundColor(CustomColor.black)
                             .shadow(color: Color(.systemCyan), radius: 20, x: -20, y: -20)
@@ -56,6 +56,8 @@ struct ContentView: View {
                                     checkAmount = String(limitedText)
                                 }
                             })
+                            .keyboardType(.decimalPad)
+                            .focused($amountIsFocused)
                         Picker("Number of people", selection: $numberOfPeople) {
                             ForEach(2..<100) {
                                 Text("\($0) people")
@@ -89,6 +91,15 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .center))
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Button("Done") {
+                            amountIsFocused = false
+                        }
+                        .font(.system(size:18, weight: .light, design: .monospaced))
+                        .foregroundColor(CustomColor.black)
+                    }
+                }
             }
         }
     }
@@ -176,5 +187,3 @@ struct ContentView_Previews: PreviewProvider {
         }
     }
 }
-
-
